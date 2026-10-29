@@ -30,7 +30,7 @@
 - Produces: `parse_note(filename: str, data: bytes) -> str`, raising `NoteError` with a user-safe message.
 - Limit: at most 20,000 Unicode characters and 256 KiB file bytes.
 
-- [ ] **Step 1: Write failing tests** for accepted UTF-8 text and Markdown, invalid extension, invalid UTF-8, blank input, byte limit and character limit.
+- [x] **Step 1: Write failing tests** for accepted UTF-8 text and Markdown, invalid extension, invalid UTF-8, blank input, byte limit and character limit.
 
 ```python
 from notes import NoteError, parse_note
@@ -43,10 +43,10 @@ def test_invalid_encoding():
         parse_note("lecture.txt", b"\xff")
 ```
 
-- [ ] **Step 2: Run** `uv run --python 3.10 pytest tests/test_notes.py -q`; expect import failure.
-- [ ] **Step 3: Implement** a pure validator. Check suffix with `Path(filename).suffix.lower()`, byte length, `data.decode("utf-8-sig")`, `strip()`, then character length; raise `NoteError` for each failure. Configure dependencies, tests, lint and ignored `.venv`, `.env`, caches.
-- [ ] **Step 4: Run** `uv run --python 3.10 pytest tests/test_notes.py -q` and `uv run --python 3.10 ruff check .`; expect pass.
-- [ ] **Step 5: Review diff and commit** `feat: validate uploaded study notes`.
+- [x] **Step 2: Run** `uv run --python 3.10 pytest tests/test_notes.py -q`; expect import failure.
+- [x] **Step 3: Implement** a pure validator. Check suffix with `Path(filename).suffix.lower()`, byte length, `data.decode("utf-8-sig")`, `strip()`, then character length; raise `NoteError` for each failure. Configure dependencies, tests, lint and ignored `.venv`, `.env`, caches.
+- [x] **Step 4: Run** `uv run --python 3.10 pytest tests/test_notes.py -q` and `uv run --python 3.10 ruff check .`; expect pass.
+- [x] **Step 5: Review diff and commit** `feat: validate uploaded study notes`.
 
 ### Task 2: Model flow and grading
 

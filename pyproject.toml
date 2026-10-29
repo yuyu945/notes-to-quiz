@@ -1,0 +1,26 @@
+[project]
+name = "study-notes-assistant"
+version = "0.1.0"
+description = "A small LangChain and DeepSeek study notes assistant"
+requires-python = ">=3.10"
+dependencies = [
+    "langchain-core>=1.0,<2",
+    "langchain-deepseek>=1.0,<2",
+    "pydantic>=2.0,<3",
+    "python-dotenv>=1.0,<2",
+    "streamlit>=1.40,<2",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8,<10",
+    "ruff>=0.8,<1",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"

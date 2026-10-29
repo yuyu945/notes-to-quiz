@@ -62,7 +62,7 @@ def test_invalid_encoding():
 - `Quiz` contains exactly three `Question` values; each `Question` has `stem: str`,
   `options: dict[str, str]` with A-D, `answer: str` in A-D and `explanation: str`.
 
-- [ ] **Step 1: Write failing tests** using a fake chat model for summary and valid JSON quiz. Add bad JSON, wrong question count, duplicate/missing options, invalid correct answer, missing Key and grading cases.
+- [x] **Step 1: Write failing tests** using a fake chat model for summary and valid JSON quiz. Add bad JSON, wrong question count, duplicate/missing options, invalid correct answer, missing Key and grading cases.
 
 ```python
 def test_grade_counts_exact_matches():
@@ -70,10 +70,10 @@ def test_grade_counts_exact_matches():
     assert grade(quiz, ["A", "B", "D"]) == [True, False, True]
 ```
 
-- [ ] **Step 2: Run** `uv run --python 3.10 pytest tests/test_study.py -q`; expect import failure.
-- [ ] **Step 3: Implement** prompt templates and `StrOutputParser`, JSON parsing with Pydantic validation, and a single `ChatDeepSeek` constructor reading `DEEPSEEK_API_KEY` and configurable `DEEPSEEK_MODEL`. Catch format problems as `StudyError` without exposing raw model output; keep provider errors classified for the UI.
-- [ ] **Step 4: Run** targeted tests, all tests, and Ruff; expect pass.
-- [ ] **Step 5: Review diff and commit** `feat: generate and grade study exercises`.
+- [x] **Step 2: Run** `uv run --python 3.10 pytest tests/test_study.py -q`; expect import failure.
+- [x] **Step 3: Implement** prompt templates and `StrOutputParser`, JSON parsing with Pydantic validation, and a single `ChatDeepSeek` constructor reading `DEEPSEEK_API_KEY` and configurable `DEEPSEEK_MODEL`. Catch format problems as `StudyError` without exposing raw model output; keep provider errors classified for the UI.
+- [x] **Step 4: Run** targeted tests, all tests, and Ruff; expect pass.
+- [x] **Step 5: Review diff and commit** `feat: generate and grade study exercises`.
 
 ### Task 3: Streamlit workflow and delivery
 

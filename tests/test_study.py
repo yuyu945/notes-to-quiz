@@ -55,7 +55,7 @@ def test_generate_quiz_parses_three_questions():
 )
 def test_generate_quiz_rejects_malformed_response(payload):
     model = FakeListChatModel(responses=[payload])
-    with pytest.raises(StudyError, match="format"):
+    with pytest.raises(StudyError, match="格式"):
         generate_quiz("Course notes", model)
 
 
@@ -66,7 +66,7 @@ def test_grade_compares_answers_without_model_call():
 
 def test_grade_requires_one_answer_per_question():
     quiz = Quiz(questions=[Question.model_validate(item) for item in VALID_QUESTIONS])
-    with pytest.raises(ValueError, match="three"):
+    with pytest.raises(ValueError, match="三"):
         grade(quiz, ["A"])
 
 

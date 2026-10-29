@@ -9,7 +9,7 @@ def test_accepts_text_and_markdown(name):
 
 
 def test_rejects_other_extensions():
-    with pytest.raises(NoteError, match="txt"):
+    with pytest.raises(NoteError, match="仅支持"):
         parse_note("lecture.pdf", b"content")
 
 
@@ -19,7 +19,7 @@ def test_rejects_invalid_utf8():
 
 
 def test_rejects_blank_note():
-    with pytest.raises(NoteError, match="empty"):
+    with pytest.raises(NoteError, match="空"):
         parse_note("lecture.md", b" \n\t ")
 
 

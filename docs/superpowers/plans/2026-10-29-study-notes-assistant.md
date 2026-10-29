@@ -35,8 +35,10 @@
 ```python
 from notes import NoteError, parse_note
 
+
 def test_markdown_note():
     assert parse_note("lecture.md", "# Intro\n".encode()) == "# Intro"
+
 
 def test_invalid_encoding():
     with pytest.raises(NoteError, match="UTF-8"):
@@ -85,9 +87,9 @@ def test_grade_counts_exact_matches():
 - A file identity consists of its name and SHA-256 of its bytes; when identity changes,
   clear summary, quiz, answers and result. Session state stores only current in-memory data.
 
-- [ ] **Step 1: Write failing AppTest and state tests** for missing Key guidance, no upload, invalid file and cleared results after changing file; use stubs for model requests so tests do not spend API credits.
-- [ ] **Step 2: Run** `uv run --python 3.10 pytest tests/test_app.py -q`; expect failure.
-- [ ] **Step 3: Implement** a compact Streamlit page with upload preview, summary and quiz commands, answer radio inputs and submit button. Keep answers hidden before submission; show actionable validation, auth, rate-limit, network and response-format errors.
-- [ ] **Step 4: Write README** with Windows PowerShell setup using `uv`, `.env.example` copy, model configuration, `uv run streamlit run app.py`, screenshots or demonstration steps, privacy/cost note, tests, and a repository link only if one has actually been created. Include a small sample note.
-- [ ] **Step 5: Run** all tests, Ruff and `git diff --check`; start Streamlit and inspect desktop/mobile UI. If a real Key exists, test upload to grading with DeepSeek; otherwise explicitly report the live API path unverified.
-- [ ] **Step 6: Review diff and commit** `feat: add study assistant UI and documentation`. Do not push without explicit request.
+- [x] **Step 1: Write failing AppTest and state tests** for missing Key guidance, no upload, invalid file and cleared results after changing file; use stubs for model requests so tests do not spend API credits.
+- [x] **Step 2: Run** `uv run --python 3.10 pytest tests/test_app.py -q`; expect failure.
+- [x] **Step 3: Implement** a compact Streamlit page with upload preview, summary and quiz commands, answer radio inputs and submit button. Keep answers hidden before submission; show actionable validation, auth, rate-limit, network and response-format errors.
+- [x] **Step 4: Write README** with Windows PowerShell setup using `uv`, `.env.example` copy, model configuration, `uv run streamlit run app.py`, screenshots or demonstration steps, privacy/cost note, tests, and a repository link only if one has actually been created. Include a small sample note.
+- [x] **Step 5: Run** all tests, Ruff and `git diff --check`; start Streamlit and inspect desktop UI. A real Key exists, and summary, quiz and grading ran with DeepSeek. Mobile-specific visual QA was not available in this browser surface.
+- [x] **Step 6: Review diff and commit** `feat: add study assistant UI and documentation`. Do not push without explicit request.

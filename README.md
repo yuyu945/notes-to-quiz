@@ -18,8 +18,11 @@
 
 ## 在 Windows PowerShell 中运行
 
+首次获取代码时克隆仓库；已有代码目录可跳过 `git clone`：
+
 ```powershell
-cd "D:\杂作业\形式化方法\开源软件构建\langchainApp"
+git clone https://github.com/yuyu945/notes-to-quiz.git "D:\langchainApp"
+cd "D:\langchainApp"
 uv sync --python 3.10
 Copy-Item .env.example .env
 ```
@@ -58,5 +61,4 @@ API 鉴权失败、限流、网络故障或模型输出格式错误时，页面�
 
 ## 开源仓库
 
-本地仓库尚未发布到公开托管平台，因此目前没有真实的开源仓库链接。
-发布后应在此处补充实际仓库 URL，再提交 README。
+[GitHub: yuyu945/notes-to-quiz](https://github.com/yuyu945/notes-to-quiz)
